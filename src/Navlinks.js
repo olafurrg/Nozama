@@ -7,19 +7,19 @@ function Navlinks(){
         <div className="navlinks">
             <div className="navlinks__outer">
                 <div className="navlinks__inner">
-                <Link>
+                <Link to="/">
                     Today's Deals
                 </Link>
-                <Link>
+                <Link to="/">
                     Customer Service
                 </Link>
-                <Link>
+                <Link to="/">
                     Gift Cards
                 </Link>
-                <Link>
+                <Link to="/">
                     Registry
                 </Link>
-                <Link>
+                <Link to="/sell">
                     Sell
                 </Link>
                 </div>

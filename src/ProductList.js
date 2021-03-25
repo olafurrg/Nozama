@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Product from './Product';
 import { useStateValue} from './StateProvider';
 import './Styling/ProductList.css';
+import {db} from './firebase';
+import firebase from 'firebase'
 
 const someItems = [
     {id:"1",
@@ -22,11 +24,43 @@ const someItems = [
 ]
 
 function ProductList(){
- 
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getProducts();
+    }, []);
+
+    function getProducts(){
+        db.collection("products").onSnapshot(function(querySnapshot){
+            setProducts(
+                querySnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    title: doc.data().title,
+                    category: doc.data().category,
+                    price: doc.data().price,
+                    rating: doc.data().rating,
+                    image: doc.data().image
+    
+                }))
+            );
+            
+        })
+    }
     return(
         <div className="productList">
             {
             someItems.map(item => (
+                <div className="eachItem">
+                    <Product
+                        key = {item.id}
+                        {...item}
+                    />
+                </div> 
+            ))
+            }
+            {
+            products.map(item => (
                 <div className="eachItem">
                     <Product
                         key = {item.id}

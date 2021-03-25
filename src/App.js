@@ -6,8 +6,9 @@ import Login from "./Login";
 import Home from './Home'
 import Checkout from './Checkout';
 import Footer from './Footer';
+import Sell from './Sell';
 import { auth } from './firebase';
-import {useEffect, usEffect} from 'react';
+import {useEffect} from 'react';
 
 function App() {
 
@@ -44,6 +45,11 @@ function App() {
           </Route>
           <Route path="/login" >
             <Login />
+            <Footer/>
+          </Route>
+          <Route path="/sell" >
+            <Header />
+            <Sell />
             <Footer/>
           </Route>
           <Route path="/" >
