@@ -5,9 +5,16 @@ import './Styling/header.css';
 import { Link } from 'react-router-dom';
 import {useStateValue} from './StateProvider';
 import Navlinks from './Navlinks';
+import { auth } from './firebase';
 
 function Header(){
-    const [{basket}, dispatch] = useStateValue();
+    const [{basket, loggedinuser}, dispatch] = useStateValue();
+
+    const logoutUser = () => {
+        if(loggedinuser){
+            auth.signOut();
+        }
+    }
 
     return (
         <div>
@@ -19,10 +26,10 @@ function Header(){
                 </div>
                 <div className="header__nav" >
                     {/* Sign in N out link*/}
-                    <Link to="/login" className="header__link">
+                    <Link to={!loggedinuser &&"/login"} className="header__link">
                         <div className="header__option">
-                            <span className="header__optionLineOne">Hello, User</span>
-                            <span className="header__optionLineTwo">Sign in or SignOut</span>
+                            <span className="header__optionLineOne">Hello, {loggedinuser?.email}</span>
+                            <span className="header__optionLineTwo">{loggedinuser ? 'Sign Out' : 'Sign In'}</span>
                         </div>
                     </Link>
                     {/* Ret & orders link*/}

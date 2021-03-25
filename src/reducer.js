@@ -1,4 +1,3 @@
-import { splitString } from "react-currency-format/lib/utils"
 
 export const initialState = {
     basket:[],
@@ -26,7 +25,10 @@ const reducer = (state, action) => {
                     console.log("Error while removing product");
                 }
                 return {...state, basket: newcart}
-            
+          case 'DEFAULT':
+              return{
+                  initialState
+              }  
     }
 }
 

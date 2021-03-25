@@ -31,12 +31,14 @@ function Checkout(){
                 }    
             </div>
             <div className="checkout__center">
-                
-            </div>
-            <div className="checkout__right">
-                <Subtotal />
-            </div>
 
+            </div>
+            {
+                basket.length > 0 && (
+                <div className="checkout__right">
+                    <Subtotal />
+                </div>)
+            }
         </div>
     )
 }
