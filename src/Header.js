@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBascketIcon from '@material-ui/icons/ShoppingBasket';
-import './header.css';
+import './Styling/header.css';
 import { Link } from 'react-router-dom';
 
 function Header(){

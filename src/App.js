@@ -1,13 +1,29 @@
-import './App.css';
+import './Styling/App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import Header from "./Header";
-import {BrowserRouter as Router} from 'react-router-dom';
+import Login from "./Login";
+import Home from './Home'
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header/>
-        <h1>Hello world, Welcome to Nozama</h1>
+      <div className="App">     
+        <Switch>
+          <Route path="/checkout" >
+           <Header/>
+            <h1>This is checkout</h1>
+          </Route>
+          <Route path="/login" >
+            <Login />
+          </Route>
+          <Route path="/" >
+            <Header />
+            <Home />
+          </Route>
+          
+        </Switch>
+        
       </div>
     </Router>
     
