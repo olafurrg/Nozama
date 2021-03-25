@@ -10,7 +10,7 @@
     padding: 20px;
     justify-content: flex-end;
 }
-.product__rating{
+.product__ratin{
     display: flex;
 }
 .product__info{
@@ -25,9 +25,13 @@
     max-height: 200px;
     object-fit: contain;
     margin-bottom: 15px;
+    border: 1px solid #ccc;
+
+
+    
 }
 .product > button{
     background-color: #f0c14b;
     border: 1px solid;
-    border-color: #a88734 #9c7e31 #846a29;;
+    border-color: #a88734 #9c7e31;
 }

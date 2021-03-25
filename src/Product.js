@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useStateValue} from './StateProvider';
 import './Styling/Product.css';
 
-function Product({id, title, price, rating, image}){
+function Product({id, title, price, rating, image, inBasket}){
     const [{basket}, dispatch] = useStateValue()
     
     const addToBasket = () => {
@@ -13,8 +13,14 @@ function Product({id, title, price, rating, image}){
                     title: title,
                     image: image,
                     price: price,
-                    rating: rating
+                    rating: rating,
                 }
+        })
+    }
+    const removeItem = () => {
+        dispatch({
+            type: 'REMOVE_FROM_CART',
+            id: id
         })
     }
 
@@ -31,12 +37,13 @@ function Product({id, title, price, rating, image}){
                         Array(rating)
                         .fill()
                         .map((_) => (
-                            <p>*</p>
+                            <span>*</span>
                         ))
                     }
                 </div>
             </div>
             <img src={image} alt="" />
+            <button onClick={removeItem}>Remove from cart</button>
             <button onClick={addToBasket}>Add to Basket</button>
         </div>
     )
