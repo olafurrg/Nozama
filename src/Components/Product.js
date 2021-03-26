@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useStateValue} from './StateProvider';
-import './Styling/Product.css';
+import { useStateValue} from '../StateProvider';
+import '../Styling/Product.css';
 
-function Product({id, title, price, rating, image, inBasket}){
+function Product({id, title, price, rating, image}){
     const [{basket}, dispatch] = useStateValue()
     
     const addToBasket = () => {

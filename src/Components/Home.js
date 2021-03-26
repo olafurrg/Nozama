@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Styling/Home.css';
+import '../Styling/Home.css';
 import ProductList from './ProductList';
 
 function Home(){

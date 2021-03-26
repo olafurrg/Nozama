@@ -1,14 +1,15 @@
 import './Styling/App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { useStateValue} from './StateProvider';
-import Header from "./Header";
-import Login from "./Login";
-import Home from './Home'
-import Checkout from './Checkout';
-import Footer from './Footer';
-import Sell from './Sell';
+import Header from "./Components/Header";
+import Login from "./Components/Login";
+import Home from './Components/Home'
+import Checkout from './Components/Checkout';
+import Footer from './Components/Footer';
+import Sell from './Components/Sell';
 import { auth } from './firebase';
 import {useEffect} from 'react';
+import Review from './Components/Review';
 
 function App() {
 
@@ -50,6 +51,11 @@ function App() {
           <Route path="/sell" >
             <Header />
             <Sell />
+            <Footer/>
+          </Route>
+          <Route path="/info" >
+            <Header />
+            <Review />
             <Footer/>
           </Route>
           <Route path="/" >

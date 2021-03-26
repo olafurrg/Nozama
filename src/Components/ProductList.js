@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
-import { useStateValue} from './StateProvider';
-import './Styling/ProductList.css';
-import {db} from './firebase';
+import { useStateValue} from '../StateProvider';
+import { Link } from 'react-router-dom';
+import '../Styling/ProductList.css';
+import {db} from '../firebase';
 import firebase from 'firebase'
+
+
 
 const someItems = [
     {id:"1",
@@ -55,17 +58,22 @@ function ProductList(){
                     <Product
                         key = {item.id}
                         {...item}
+                        
                     />
+                    
                 </div> 
             ))
             }
             {
             products.map(item => (
                 <div className="eachItem">
-                    <Product
-                        key = {item.id}
-                        {...item}
-                    />
+                    <Link to={`/info/${item.id}`}>
+                        <Product
+                            key = {item.id}
+                            {...item}
+                        />
+                    </Link>
+                    
                 </div> 
             ))
             }

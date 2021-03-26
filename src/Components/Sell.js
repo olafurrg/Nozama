@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {db} from './firebase';
+import {db} from '../firebase';
 import firebase from 'firebase';
 
-import { useStateValue} from './StateProvider';
-import './Styling/Sell.css';
+import { useStateValue} from '../StateProvider';
+import '../Styling/Sell.css';
 import Product from './Product';
 
 function Sell() {
@@ -21,37 +21,10 @@ function Sell() {
     const [price, setPrice] = useState("")
     const [rating, setRating] = useState("")
     const [image, setImage] = useState("")
-  
-
-    const handleInputChange = e =>{
-        var { name, value } = e.target
-        setValues({
-            ...values,
-            [name]: value
-        })
-        console.log(name);
-    }
-
 
     function createProduct(e){
         e.preventDefault();
-        {/*
-        db.collection("products").add({
-            title: values.title,
-            category: values.category,
-            price: values.price,
-            rating: values.rating,
-            image: values.image,
-
-        });
         
-        db.collection("products").add({
-            title: values.title,
-            category: values.category,
-            price: values.price,
-            rating: values.rating,
-            image: values.image,s
-        */}
         const productsRef = db.collection('products');
         console.log(title);
         productsRef.add({

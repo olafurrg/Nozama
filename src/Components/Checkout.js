@@ -1,7 +1,7 @@
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import React from 'react';
-import { useStateValue} from './StateProvider';
-import './Styling/Checkout.css';
+import { useStateValue} from '../StateProvider';
+import '../Styling/Checkout.css';
 import Subtotal from './Subtotal';
 import Product from './Product';
 import { splitString } from 'react-currency-format/lib/utils';

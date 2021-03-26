@@ -1,11 +1,11 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBascketIcon from '@material-ui/icons/ShoppingBasket';
-import './Styling/header.css';
+import '../Styling/header.css';
 import { Link } from 'react-router-dom';
-import {useStateValue} from './StateProvider';
+import {useStateValue} from '../StateProvider';
 import Navlinks from './Navlinks';
-import { auth } from './firebase';
+import { auth } from '../firebase';
 
 function Header(){
     const [{basket, loggedinuser}, dispatch] = useStateValue();
@@ -19,7 +19,9 @@ function Header(){
     return (
         <div>
             <nav className="header">
-                <img className="header__logo"  alt="logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
+                <Link to="/">
+                    <img className="header__logo"  alt="logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
+                </Link>
                 <div className="header__search">
                     <input type="text" className="header__searchInput" placeholder="Search for that special item"/>
                     <SearchIcon className="header__searchIcon" />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Styling/Navlinks.css';
+import '../Styling/Navlinks.css';
 
 function Navlinks(){
     return(

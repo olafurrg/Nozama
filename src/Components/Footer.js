@@ -1,25 +1,30 @@
 import React from 'react';
 
-import './Styling/Footer.css';
+import '../Styling/Footer.css';
 
 function Footer(){
+
+    function handleScroll(){
+        window.scrollTo(0,0);
+    }
+
     return(
         <div className="footerarea">
             <div className="footerarea__top">
-                <p>Back to top</p>
+                <p onClick={handleScroll}>Back to top</p>
             </div>
             <div className="footerarea__links">
                 <div>
-                    <span>Test 1</span>
+                    <span>Contact US</span>
                 </div>
                 <div>
-                    <span>Test 2</span>
+                    <span>Location</span>
                 </div>
                 <div>
-                    <span>Test 3</span>
+                    <span>About Us</span>
                 </div>
                 <div>
-                    <span>Test 4</span>
+                    <span>Now Hiring</span>
                 </div>
                 
             </div>
