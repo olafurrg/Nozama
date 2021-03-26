@@ -13,12 +13,12 @@ const someItems = [
     image:"https:images-eu.ssl-images-amazon.com/images/I/71K7Q4FpguL._AC_SL1500_.jpg"},
     {id:"2",
     title:"The Lean Startup: How Contant Innovation",
-    price:11.96,
+    price:110.96,
     rating:4,
     image:"https:images-eu.ssl-images-amazon.com/images/I/71K7Q4FpguL._AC_SL1500_.jpg"},
     {id:"3",
     title:"The Lean Startup: How Contant Innovation",
-    price:11.96,
+    price:11.46,
     rating:4,
     image:"https:images-eu.ssl-images-amazon.com/images/I/71K7Q4FpguL._AC_SL1500_.jpg"}
 ]

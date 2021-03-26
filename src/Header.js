@@ -29,7 +29,7 @@ function Header(){
                     <Link to={!loggedinuser &&"/login"} className="header__link">
                         <div className="header__option">
                             <span className="header__optionLineOne">Hello, {loggedinuser?.email}</span>
-                            <span className="header__optionLineTwo">{loggedinuser ? 'Sign Out' : 'Sign In'}</span>
+                            <span className="header__optionLineTwo" onClick={logoutUser}>{loggedinuser ? 'Sign Out' : 'Sign In'}</span>
                         </div>
                     </Link>
                     {/* Ret & orders link*/}
